@@ -4,6 +4,7 @@ type HelloProps = {
 }
 
 const Hello = (props: HelloProps) => {
+
   return(
     <h1>
       Hello {props.message}

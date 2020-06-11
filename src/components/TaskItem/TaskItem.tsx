@@ -8,9 +8,9 @@ type Props = {
   handleDelete: (task: Task) => void
 }
 
-const TaskItem: React.FC<Props> = ({task}) => {
+const TaskItem: React.FC<Props> = ({task, handleDone, handleDelete}) => {
   return (
-    <li>
+    <li className={task.done ? 'done' : ''}>
       <label >
         <input type="checkbox" className="checkbox-input" />
         <span className="checkbox-label">{ task.title} </span>

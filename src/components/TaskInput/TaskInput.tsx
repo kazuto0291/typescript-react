@@ -15,8 +15,17 @@ const TaskInput :React.FC<Props> = ({ tasks, setTasks}) => {
     setInputTitle(e.target.value)
   }
 
-  const handleSubmit = () {
-    
+  const handleSubmit = () => {
+    setCount(count + 1)
+
+    const newTask: Task = {
+      id: count,
+      title: inputTitle,
+      done: false
+    }
+
+    setTasks([newTask, ...tasks])
+    setInputTitle('')
   }
   return (
     <div className="input-from">

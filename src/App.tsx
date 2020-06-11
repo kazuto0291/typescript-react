@@ -1,15 +1,26 @@
-import React, { useState } from 'react';
-import Hello from './components/Hello/Hello';
+import React,{ useState}  from 'react';
+import TaskList from './components/TaskList/TaskList'
+import {Task} from './Types'
 
-const App = () => {
-  const [name, setName] = useState<string | null>('Peter');
+const initialState: Task[] = [
+  {
+    id:2,
+    title: 'つぎのTODO',
+    done: false
+  },{
+    id: 1,
+    title: '最初のTODO',
+    done: true
+  }
+]
+
+const App: React.FC = () => {
+  const [tasks, setTasks] = useState(initialState)
   return (
-    <div className="App">
-      <header className="App-header">
-        <Hello message={`I am ${name}!`}></Hello>
-      </header>
+    <div>
+      <TaskList tasks={tasks} />
     </div>
-  );
+  )
 }
 
 export default App;

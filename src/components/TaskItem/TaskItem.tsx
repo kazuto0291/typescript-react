@@ -20,7 +20,10 @@ const TaskItem: React.FC<Props> = ({task, handleDone, handleDelete}) => {
         />
         <span className="checkbox-label">{ task.title} </span>
       </label>
-      <button className="btn is-delete">削除</button>
+      <button
+          onClick={() => handleDelete(task)}
+          className="btn is-delete"
+      >削除</button>
     </li>
   )
 }

@@ -8,7 +8,16 @@ type Props = {
 
 }
 
-const TaskList: React.FC<Props> = ({tasks}) => {
+const TaskList: React.FC<Props> = ({tasks, setTasks}) => {
+
+  const handleDone = (task: Task) => {
+    setTasks(prev => prev.map( t => 
+      t.id === task.id
+          ? { ...task, done: !task.done}
+          : t
+      ))
+  }
+
   return (
     <div className="inner">
       {

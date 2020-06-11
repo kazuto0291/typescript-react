@@ -18,6 +18,12 @@ const TaskList: React.FC<Props> = ({tasks, setTasks}) => {
       ))
   }
 
+  const handleDelete = (task: Task) => {
+    setTasks(prev => prev.filter(t =>
+        t.id !== task.id
+      ))
+  }
+
   return (
     <div className="inner">
       {

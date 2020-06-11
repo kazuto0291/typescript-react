@@ -11,7 +11,7 @@ type Props = {
 const TaskList: React.FC<Props> = ({tasks, setTasks}) => {
 
   const handleDone = (task: Task) => {
-    setTasks(prev => prev.map( t => 
+    setTasks(prev => prev.map( t =>
       t.id === task.id
           ? { ...task, done: !task.done}
           : t
@@ -33,6 +33,8 @@ const TaskList: React.FC<Props> = ({tasks, setTasks}) => {
             <TaskItem
               key={task.id}
               task={task}
+              handleDone={handleDone}
+              handleDelete={handleDelete}
             />
           ))}
         </ul>

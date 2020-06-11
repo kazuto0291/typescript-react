@@ -1,5 +1,6 @@
 import React,{ useState}  from 'react';
 import TaskList from './components/TaskList/TaskList'
+import TaskInput from './components/TaskInput/TaskInput'
 import {Task} from './Types'
 
 const initialState: Task[] = [
@@ -18,6 +19,7 @@ const App: React.FC = () => {
   const [tasks, setTasks] = useState(initialState)
   return (
     <div>
+      <TaskInput />
       <TaskList tasks={tasks} />
     </div>
   )
